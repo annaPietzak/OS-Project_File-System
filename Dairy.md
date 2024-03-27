@@ -25,8 +25,15 @@ For the presentation we need:
 * [tag files on linux - StackOverflow](https://unix.stackexchange.com/questions/683017/how-to-tag-any-file-on-the-unix-system)
 * intresting application, our project might be similar to this [TMSU - github](https://github.com/oniony/TMSU)
 * [How to create a file system on a linux partition](https://opensource.com/article/19/4/create-filesystem-linux-partition)
+* [ext4 file system mounting](https://www.tecmint.com/create-new-ext4-file-system-partition-in-linux/)
+* [Difference in Linux filesystems](https://www.easeus.com/computer-instruction/linux-file-system-type.html)
+* [Linux file system](https://www.geeksforgeeks.org/linux-file-system/)
+* [makefs manual page](https://manpages.ubuntu.com/manpages/xenial/man8/makefs.8.html)
+* [https://www.quora.com/How-do-I-create-a-custom-file-system-in-C](https://www.quora.com/How-do-I-create-a-custom-file-system-in-C)
+* [tagging files](https://unix.stackexchange.com/questions/683017/how-to-tag-any-file-on-the-unix-system)
+
 
 #### task division
 * Anna will prepare the presentation (visually)
-* timmy will (somehow) make the timetable
+* timmy will make the timetable with grant project or another tool of choice
 * both conduct further research into how to implement our solution
