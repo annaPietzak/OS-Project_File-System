@@ -31,6 +31,7 @@ For the presentation we need:
 * [makefs manual page](https://manpages.ubuntu.com/manpages/xenial/man8/makefs.8.html)
 * [https://www.quora.com/How-do-I-create-a-custom-file-system-in-C](https://www.quora.com/How-do-I-create-a-custom-file-system-in-C)
 * [tagging files](https://unix.stackexchange.com/questions/683017/how-to-tag-any-file-on-the-unix-system)
+* [ChatGPT's help](https://chat.openai.com/share/348b3d0f-6fb6-4dc0-ba30-efd7704b21e1)
 
 
 #### task division
