@@ -1,13 +1,21 @@
 #include <fcntl.h>
 #include <sys/xattr.h>
 #include <string.h>
-#include <stddef.h>
-#include <attr/attributes.h>
-
+#include <stdio.h>
 
 int main (int argc, char * argv[]) {
-	int fd2 = open(argv[1], O_RDWR | O_CREAT, S_IRWXU | S_IRWXG | S_IRWXO);
+    if (argc < 4) {
+        printf("Usage: %s <file_path> user.<tagname> <tagvalue>\n", argv[0]);
+        return 1;
+    }
 
-	//attr_set (argv[1], "tag", argv[2], strlen(argv[2]), NULL);
-	setxattr(argv[1], "tag", argv[2], strlen(argv[2]), 0);
+    int fd2 = open(argv[1], O_RDWR | O_CREAT, S_IRWXU | S_IRWXG | S_IRWXO);
+
+    // Set the extended attribute on the file
+    if (setxattr(argv[1], argv[2], argv[3], strlen(argv[3]), 0) == -1) {
+        perror("setxattr");
+        return 1;
+    }
+
+    printf("Tag %s set successfully for file %s with name %s\n", argv[3], argv[1], argv[1]);
 }
