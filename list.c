@@ -1,19 +1,24 @@
-#include <fcntl.h>
 #include <sys/xattr.h>
-#include <sys/types.h>
-#include <string.h>
-#include <stddef.h>
-#include <attr/attributes.h>
 #include <stdio.h>
 
+#define MAX_ATTR_SIZE 1024
+
 int main (int argc, char * argv[]) {
-	char* attr[strlen("educationXXX")];
-	listxattr(argv[1], *attr, strlen("educationXXX"));
-	printf("attributes: %s\n", *attr);
+    if (argc < 3) {
+        printf("Usage: %s <file_path> user.<tagname>\n", argv[0]);
+        return 1;
+    }
 
-	getxattr(argv[1], "tag", *attr, strlen("educationXXX"));
-	printf("attributes: %s\n", *attr);
+    char attr_value[MAX_ATTR_SIZE];
+    ssize_t attr_size;
+
+    // List the extended attribute
+    attr_size = getxattr(argv[1], argv[2], attr_value, sizeof(attr_value));
+    if (attr_size == -1) {
+        perror("getxattr");
+        return 1;
+    }
+
+    // Print the value of the extended attribute
+    printf("Tag with attribute name %s has value %s\n", argv[2], attr_value);
 }
-
-
-
