@@ -11,10 +11,9 @@ int main(int argc, char *argv[]) {
     }
 
     char attr_list[MAX_ATTR_SIZE];
-    ssize_t attr_size;
 
     // List all the extended attribute names
-    attr_size = listxattr(argv[1], attr_list, sizeof(attr_list));
+    ssize_t attr_size = listxattr(argv[1], attr_list, sizeof(attr_list));
     if (attr_size == -1) {
         perror("listxattr");
         return 1;
