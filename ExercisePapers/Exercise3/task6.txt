@@ -1,0 +1,8 @@
+Behavior:
+first_mutex is locked in do_work_one and second_mutex is locked in do_work_two. In do_work_one, if it can't lock
+second_mutex, then it will be waiting by unlocking and locking. Once it can get into the if loop, it unlocks
+second_mutex and sets done to 1 which quits the while loop.
+
+Difference:
+The difference is that in code 1, we check, if we were successfull in locking the second_mutex. Whereas in code 2, we
+check, if we weren't able to lock second_mutex.
