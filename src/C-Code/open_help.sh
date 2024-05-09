@@ -1,6 +1,6 @@
 #!/bin/bash
 
-filepath="/home/bobadmin/Desktop/help.md"
+filepath="/home/bobadmin/OS-Project_File-System/help.md"
 
 if [ -f "$filepath" ]; then
   # Open the file using 'less' for a man page-like experience

@@ -1,10 +1,3 @@
- ______ ______ _______       _____ 
-|  ____|  ____|__   __|/\   / ____|
-| |__  | |__     | |  /  \ | (____ 
-|  __| |  __|    | | / /\ \ \___  \
-| |____| |       | |/ ____ \____) |
-|______|_|       |_/_/    \_\_____/
-
 
 ███████╗███████╗████████╗ █████╗ ███████╗
 ██╔════╝██╔════╝╚══██╔══╝██╔══██╗██╔════╝
@@ -27,12 +20,13 @@ USAGE
 Using our extension is very simple. Just type eftas <operation>.
 
 The different operations you can execute are:
-- mkfile <file_path> <tagname> <tagvalue> -> creates a file with the specified tagname and -value. If the file already exists, then it will just add the tag to that file.
-- lsDifferent2 <nothing,-a,tagname> -> shows you files in different ways
+- mkfile <tag_name> <tag_value> <file_path> -> creates a file with the specified tagname and -value. If the file already exists, then it will just add the tag to that file.
+- lsDifferent2 <nothing,-a,tag_name> -> shows you files in different ways
 	- nothing will utilize the ls command and will show you files in your current directory
 	- -a will show you all the files
 	- tagname will show you the files with that tagname from your current directory
-- deleteTag <file_path> <tagname> -> deletes a tag from a file
+- deleteTag <tag_name> <file_path> -> deletes a tag from a file
+- listAll <file_path> -> lists all tags that the specified file has
 
 
 BUGS
@@ -46,12 +40,12 @@ We are two computer science students from the university of Basel and created th
 
 
 
-     /\__/\
-    /`    '\
-  === 0  0 ===
-    \  --  /
-   /        \
-  /          \
- |            |
-  \  ||  ||  /
-   \_oo__oo_/#######o
+       /\__/\
+      /`    '\
+    === 0  0 ===
+      \  --  /
+     /        \
+    /          \
+   |            |
+    \  ||  ||  /
+     \_oo__oo_/#######o

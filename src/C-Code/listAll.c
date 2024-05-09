@@ -1,8 +1,7 @@
 #include <sys/xattr.h>
 #include <stdio.h>
 #include <string.h>
-
-#define MAX_ATTR_SIZE 1024
+#include <stdlib.h>
 
 int main(int argc, char *argv[]) {
     if (argc < 2) {
@@ -10,12 +9,28 @@ int main(int argc, char *argv[]) {
         return 1;
     }
 
-    char attr_list[MAX_ATTR_SIZE];
+    char *filePath = argv[1];
+    ssize_t attr_size;
 
-    // List all the extended attribute names
-    ssize_t attr_size = listxattr(argv[1], attr_list, sizeof(attr_list));
+    // Get the size of the extended attributes list
+    attr_size = listxattr(filePath, NULL, 0);
     if (attr_size == -1) {
-        perror("listxattr");
+        fprintf(stderr, "Error when getting size of extended attributes list (listxattr 1)");
+        return 1;
+    }
+
+    // Allocate memory for the attribute list
+    char *attr_list = malloc(attr_size);
+    if (!attr_list) {
+        fprintf(stderr, "Error: Couldn't allocate memory (malloc)");
+        return 1;
+    }
+
+    // Get the actual list of extended attributes
+    attr_size = listxattr(filePath, attr_list, attr_size);
+    if (attr_size == -1) {
+        fprintf(stderr, "Error: Couldn't get actual list of attributes (listxattr 2)");
+        free(attr_list);
         return 1;
     }
 
@@ -26,6 +41,9 @@ int main(int argc, char *argv[]) {
         printf("%s\n", attr_name);
         attr_name += strlen(attr_name) + 1; // Move to the next attribute name
     }
+
+    // Clean up
+    free(attr_list);
 
     return 0;
 }
