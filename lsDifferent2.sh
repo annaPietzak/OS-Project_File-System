@@ -2,22 +2,22 @@
 
 case "$1" in
   "-a")
-	# Case when the user wants to see all the files
-  	ls -a "$@"
-  	;;
+  	# -a case for showing all the files
+    ls -a "$@"
+    ;;
   "help")
-  	# Help case in case the user doesn't know, how to use it
-	echo "Usage: $0 <tag_name>"
-	echo " List files with the specified tag."
-	echo " If no attribute is given, behaves like the normal 'ls' command."
-	exit 0
+    # Help case for showing user, how it works
+    echo "Usage: $0 <tag_name> or -a"
+    echo " List files with the specified tag."
+    echo " If no attribute is given, behaves like the normal 'ls' command."
+    exit 0
     ;;
   *) 
-  	# Default case where only files with the extended attribute are shown
-	if [ -z "$1" ]; then
-		ls "$@"
-	else
-		getfattr -R -L -n "user.$1" "$@"
-	fi
+    # Default case: find files and folders with the extended attribute
+    if [ -z "$1" ]; then
+    	ls "$@"
+    else
+    	find . -name "*.*" -exec getfattr -n "user.$1" {} + 2>/dev/null | grep -v "No such attribute"
+    fi
     ;;
 esac
