@@ -49,7 +49,7 @@ int main (int argc, char * argv[]) {
     }
 
     // Set the attribute on the file
-    if (setxattr(filePath, attr_name, tagValue, fullTagNameLength, 0) == -1) {
+    if (setxattr(filePath, attr_name, tagValue, valueLength, 0) == -1) {
         perror("setxattr");
         close(file);
         return 1;
