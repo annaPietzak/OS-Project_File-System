@@ -24,6 +24,6 @@ case "$1" in
    	;;
   *) 
     # Default case: find files and folders with the extended attribute
-    find . -name "*.*" -exec getfattr -n "user.$1" {} + 2>/dev/null | grep -v "No such attribute"
+    find . -exec getfattr -n "user.$1" {} + 2>/dev/null | grep -v "No such attribute"
     ;;
 esac
