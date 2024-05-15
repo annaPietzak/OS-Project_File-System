@@ -38,3 +38,11 @@ For the presentation we need:
 * Anna will prepare the presentation (visually)
 * timmy will make the timetable with grant project or another tool of choice
 * both conduct further research into how to implement our solution
+
+#### Open Tasks (15.05)
+* Testing and troubleshooting (Timmy) -> Till 05.06
+* GUI in C (like Lazy Docker) (Anna) -> Till 05.06
+* Readme File as Tutorial (Timmy) -> Till 11.06
+* Create License (Timmy) -> Till 11.06
+* Report (Anna) -> Till 11.06
+* Presentation (Anna) -> Till 11.06
