@@ -3,7 +3,7 @@
 #include <string.h>
 #include <errno.h>
 
-#define MAX_ATTR_SIZE 1024
+#define MAX_ATTR_NAME_SIZE 255
 
 int main(int argc, char *argv[]) {
     if (argc < 3) {
@@ -15,14 +15,8 @@ int main(int argc, char *argv[]) {
     char *filePath = argv[2];
 
     // Concatenate user.tagName to get user.<tag_name>
-    char attr_name[MAX_ATTR_SIZE];
-    int ret = snprintf(attr_name, MAX_ATTR_SIZE, "user.%s", tagName);
-
-    // Check if the full attribute name was truncated
-    if (ret >= MAX_ATTR_SIZE || ret < 0) {
-        fprintf(stderr, "Error: Attribute name '%s' is too long or an error occurred.\n", attr_name);
-        return 1;
-    }
+    char attr_name[MAX_ATTR_NAME_SIZE];
+    snprintf(attr_name, MAX_ATTR_NAME_SIZE, "user.%s", tagName);
 
     // Remove the specified extended attribute
     if (removexattr(filePath, attr_name) == -1) {

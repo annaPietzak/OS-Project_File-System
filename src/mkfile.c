@@ -8,7 +8,7 @@
 #define MAX_ATTR_NAME_SIZE 255
 #define MAX_ATTR_VALUE_SIZE 3073
 
-// Function to check if a string contains only allowed characters (a-zA-Z0-9_)
+// Function to check if a string contains only alphanumeric characters (a-zA-Z0-9_)
 int is_valid_string(const char *str) {
     while (*str) {
         if (!isalnum((unsigned char)*str) && *str != '_') {
@@ -28,7 +28,7 @@ int main (int argc, char * argv[]) {
     char *tagValue = argv[2];
     char *filePath = argv[3];
 
-    // Check the combined length of "user." and tagName
+    // Check if combined length of "user." and tagName is longer than allowed
     size_t fullTagNameLength = strlen("user.") + strlen(tagName);
     printf("Full attribute name length: %zu\n", fullTagNameLength);
 
