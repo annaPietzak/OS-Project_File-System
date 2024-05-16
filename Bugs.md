@@ -10,3 +10,5 @@ and with getfattr it's user.test~~
 from file 'test.txt': No data available)~~ -> I think it's okay after thinking
 * ~~when executing listAll, only shows name but would be nice to see value as well~~
 * ~~listAll: when path doesn't exist, this happens (Error when getting size of extended attributes list (listxattr 1))~~
+* in eftas.sh all the links are hardcoded. so if it's a different user, then it won't work
+* in open_help.sh the link to the help.md is hard coded
