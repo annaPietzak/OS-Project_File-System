@@ -3,9 +3,21 @@
 #include <string.h>
 #include <stdio.h>
 #include <unistd.h>
+#include <ctype.h>
 
 #define MAX_ATTR_NAME_SIZE 255
 #define MAX_ATTR_VALUE_SIZE 3073
+
+// Function to check if a string contains only allowed characters (a-zA-Z0-9_)
+int is_valid_string(const char *str) {
+    while (*str) {
+        if (!isalnum((unsigned char)*str) && *str != '_') {
+            return 1;  // Invalid character found
+        }
+        str++;
+    }
+    return 0;  // All characters are valid
+}
 
 int main (int argc, char * argv[]) {
     if (argc < 4) {
@@ -23,6 +35,20 @@ int main (int argc, char * argv[]) {
     if (fullTagNameLength >= MAX_ATTR_NAME_SIZE) {
         fprintf(stderr, "Error: The total length of 'user.%s' exceeds the limit of %d characters\n",
                 tagName, MAX_ATTR_NAME_SIZE - 1);
+        return 1;
+    }
+
+    // Check if the tagName contains any non-alphanumeric characters
+    if (is_valid_string(tagName) == 1) {
+        fprintf(stderr, "Error: Tag name '%s' contains invalid characters. "
+                        "Only alphanumeric and underscores are allowed.\n", tagName);
+        return 1;
+    }
+
+    // Check if the tagValue contains any non-alphanumeric characters
+    if (is_valid_string(tagValue) == 1) {
+        fprintf(stderr, "Error: Tag value '%s' contains invalid characters. "
+                        "Only alphanumeric and underscores are allowed.\n", tagValue);
         return 1;
     }
 
