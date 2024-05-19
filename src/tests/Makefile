@@ -2,7 +2,12 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -I../include
 LDFLAGS = -lcunit
-SRC = ../checkLengthName.c ../isValidString.c test_check_tag_name.c test_is_valid_string.c test_suite.c
+SRC = 	../checkLengthName.c \
+		../checkLengthValue.c \
+		test_check_tag.c \
+		../isValidString.c \
+		test_is_valid_string.c \
+		test_suite.c
 OBJ = $(SRC:.c=.o)
 EXEC = test_suite
 
