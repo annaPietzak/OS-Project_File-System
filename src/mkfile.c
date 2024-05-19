@@ -4,8 +4,7 @@
 #include <unistd.h>
 #include "include/isValidString.h"
 #include "include/checkLengthName.h"
-
-#define MAX_ATTR_VALUE_SIZE 3073
+#include "include/checkLengthValue.h"
 
 int main (int argc, char * argv[]) {
     if (argc < 4) {
@@ -18,8 +17,14 @@ int main (int argc, char * argv[]) {
 
     // Check if combined length of "user." and tagName is longer than allowed
     if (check_tag_name(tagName) == 1) {
-        fprintf(stderr, "Error: The total length of 'user.%s' exceeds the limit of %d characters\n",
-                tagName, MAX_ATTR_NAME_SIZE - 1);
+        fprintf(stderr, "Error: The total length of the tag_name exceeds the limit of %d characters\n",
+                MAX_ATTR_NAME_SIZE - 1);
+        return 1;
+    }
+
+    if (check_tag_value(tagValue) == 1) {
+        fprintf(stderr, "Error: The length of the tag_value exceeds the limit of %d characters\n",
+                MAX_ATTR_VALUE_SIZE - 1);
         return 1;
     }
 
