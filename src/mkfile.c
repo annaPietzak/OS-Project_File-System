@@ -1,23 +1,11 @@
 #include <fcntl.h>
+#include <sys/stat.h>
 #include <sys/xattr.h>
-#include <string.h>
-#include <stdio.h>
 #include <unistd.h>
-#include <ctype.h>
+#include "include/isValidString.h"
+#include "include/checkLengthName.h"
 
-#define MAX_ATTR_NAME_SIZE 255
 #define MAX_ATTR_VALUE_SIZE 3073
-
-// Function to check if a string contains only alphanumeric characters (a-zA-Z0-9_)
-int is_valid_string(const char *str) {
-    while (*str) {
-        if (!isalnum((unsigned char)*str) && *str != '_') {
-            return 1;  // Invalid character found
-        }
-        str++;
-    }
-    return 0;  // All characters are valid
-}
 
 int main (int argc, char * argv[]) {
     if (argc < 4) {
@@ -29,10 +17,7 @@ int main (int argc, char * argv[]) {
     char *filePath = argv[3];
 
     // Check if combined length of "user." and tagName is longer than allowed
-    size_t fullTagNameLength = strlen("user.") + strlen(tagName);
-    printf("Full attribute name length: %zu\n", fullTagNameLength);
-
-    if (fullTagNameLength >= MAX_ATTR_NAME_SIZE) {
+    if (check_tag_name(tagName) == 1) {
         fprintf(stderr, "Error: The total length of 'user.%s' exceeds the limit of %d characters\n",
                 tagName, MAX_ATTR_NAME_SIZE - 1);
         return 1;
