@@ -1,6 +1,6 @@
 #!/bin/bash
 
-FILE="/home/bobadmin/OS-Project_File-System/src/test/test.txt"
+FILE="/home/$USER/OS-Project_File-System/src/tests/test.txt"
 ATTR_NAME="user.test"
 
 # Create a test file
