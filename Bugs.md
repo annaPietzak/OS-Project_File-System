@@ -15,3 +15,4 @@ from file 'test.txt': No data available)~~ -> I think it's okay after thinking
 * ~~in open_help.sh the link to the help.md is hard coded~~
 * ~~deleteTag should check length and validity of tagname before doing anything with it~~
 * mkfile should check first, if tag exists before adding it
+* ~~mkfile has to check length of tagValue~~
