@@ -16,3 +16,7 @@ from file 'test.txt': No data available)~~ -> I think it's okay after thinking
 * ~~deleteTag should check length and validity of tagname before doing anything with it~~
 * mkfile should check first, if tag exists before adding it
 * ~~mkfile has to check length of tagValue~~
+* ~~split the code in mkfile so that we have a function that we can test and a main method which is being executed~~
+* ~~split the code in deleteTag so that we have a function that we can test and a main method which is being executed~~
+* ~~split the code in listAll so that we have a function that we can test and a main method which is being executed~~
+* when listAll doesn't find any tags, it should say that there aren't any in this file
