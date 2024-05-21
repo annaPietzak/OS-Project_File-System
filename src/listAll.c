@@ -1,18 +1,6 @@
-#include <sys/xattr.h>
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-#include <errno.h>
+#include "include/listAll.h"
 
-#define MAX_ATTR_VALUE_SIZE 3073
-
-int main(int argc, char *argv[]) {
-    if (argc < 2) {
-        printf("Usage: %s <file_path>\n", argv[0]);
-        return 1;
-    }
-
-    char *filePath = argv[1];
+int list_all_tags(const char * filePath) {
     ssize_t attr_size;
 
     // Get the size of the extended attributes list
@@ -38,7 +26,7 @@ int main(int argc, char *argv[]) {
     }
 
     // Print all the extended attribute names
-    printf("Extended attributes for %s:\n", argv[1]);
+    printf("Extended attributes for %s:\n", filePath);
     char *attr_name = attr_list;
     while (attr_name < attr_list + attr_size) {
         char attr_value[MAX_ATTR_VALUE_SIZE];
@@ -59,6 +47,5 @@ int main(int argc, char *argv[]) {
 
     // Clean up
     free(attr_list);
-
     return 0;
 }
