@@ -3,36 +3,45 @@ CC = gcc
 CFLAGS = -Wall -Wextra -std=c99
 
 # Object files
-MKFILE_OBJ = mkfile.o isValidString.o checkLengthName.o checkLengthValue.o
-DELETE_OBJ = deleteTag.o isValidString.o checkLengthName.o
-LISTALL_OBJ = listAll.o
+MKFILE_MAIN_OBJ = mkfile_main.o mkfile.o isValidString.o checkLengthName.o checkLengthValue.o
+DELETE_MAIN_OBJ = deleteTag_main.o deleteTag.o isValidString.o checkLengthName.o
+LISTALL_MAIN_OBJ = listAll_main.o listAll.o isValidString.o
 
 # Executables
-MKFILE_EXE = mkfile
-DELETE_EXE = deleteTag
-LISTALL_EXE = listAll
+MKFILE_MAIN_EXE = mkfile_main
+DELETE_MAIN_EXE = deleteTag_main
+LISTALL_MAIN_EXE = listAll_main
 
 # All targets
-all: $(MKFILE_EXE) $(DELETE_EXE) $(LISTALL_EXE)
+all: $(MKFILE_MAIN_EXE) $(DELETE_MAIN_EXE) $(LISTALL_MAIN_EXE)
 
 # mkfile executable
-$(MKFILE_EXE): $(MKFILE_OBJ)
-	$(CC) $(MKFILE_OBJ) -o $(MKFILE_EXE)
+$(MKFILE_MAIN_EXE): $(MKFILE_MAIN_OBJ)
+	$(CC) $(MKFILE_MAIN_OBJ) -o $(MKFILE_MAIN_EXE)
 
 # deleteTag executable
-$(DELETE_EXE): $(DELETE_OBJ)
-	$(CC) $(DELETE_OBJ) -o $(DELETE_EXE)
+$(DELETE_MAIN_EXE): $(DELETE_MAIN_OBJ)
+	$(CC) $(DELETE_MAIN_OBJ) -o $(DELETE_MAIN_EXE)
 
 # listAll executable
-$(LISTALL_EXE): $(LISTALL_OBJ)
-	$(CC) $(LISTALL_OBJ) -o $(LISTALL_EXE)
+$(LISTALL_MAIN_EXE): $(LISTALL_MAIN_OBJ)
+	$(CC) $(LISTALL_MAIN_OBJ) -o $(LISTALL_MAIN_EXE)
 
 # Compile object files
-mkfile.o: mkfile.c include/isValidString.h include/checkLengthName.h include/checkLengthValue.h
+mkfile_main.o: mkfile_main.c include/mkfile.h
+	$(CC) $(CFLAGS) -c mkfile_main.c
+
+mkfile.o: mkfile.c include/mkfile.h include/isValidString.h include/checkLengthName.h include/checkLengthValue.h
 	$(CC) $(CFLAGS) -c mkfile.c
 
-deleteTag.o: deleteTag.c include/isValidString.h
+deleteTag_main.o: deleteTag_main.c include/deleteTag.h
+	$(CC) $(CFLAGS) -c deleteTag_main.c
+
+deleteTag.o: deleteTag.c include/deleteTag.h include/isValidString.h
 	$(CC) $(CFLAGS) -c deleteTag.c
+
+listAll_main.o: listAll_main.c include/listAll.h
+	$(CC) $(CFLAGS) -c listAll_main.c
 
 listAll.o: listAll.c include/isValidString.h
 	$(CC) $(CFLAGS) -c listAll.c
@@ -48,6 +57,6 @@ checkLengthValue.o: checkLengthValue.c include/checkLengthValue.h
 
 # Clean up
 clean:
-	rm -f *.o $(MKFILE_EXE) $(DELETE_EXE) $(LISTALL_EXE)
+	rm -f *.o $(MKFILE_MAIN_EXE) $(DELETE_MAIN_EXE) $(LISTALL_EXE)
 
 .PHONY: all clean

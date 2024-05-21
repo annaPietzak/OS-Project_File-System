@@ -13,7 +13,7 @@ case "$1" in
     ;;
   "mkfile")
   	# Make a file case
-    /home/$USER/OS-Project_File-System/src/mkfile $2 $3 $4
+    /home/$USER/OS-Project_File-System/src/mkfile_main $2 $3 $4
     ;;
   "lsDifferent2")
     # Our version of ls case
@@ -27,11 +27,11 @@ case "$1" in
    	;;
   "deleteTag")
     # Delete tag from file case
-	  /home/$USER/OS-Project_File-System/src/deleteTag $2 $3
+	  /home/$USER/OS-Project_File-System/src/deleteTag_main $2 $3
    	;;
   "listAll")
    	# List all tags from specific file case
-   	/home/$USER/OS-Project_File-System/src/listAll $2
+   	/home/$USER/OS-Project_File-System/src/listAll_main $2
    	;;
   *) 
     # Default case: find files and folders with the extended attribute
