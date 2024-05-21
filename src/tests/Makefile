@@ -7,6 +7,12 @@ SRC = 	../checkLengthName.c \
 		test_check_tag.c \
 		../isValidString.c \
 		test_is_valid_string.c \
+		test_mkfile.c \
+		../mkfile.c \
+		test_deleteTag.c \
+		../deleteTag.c \
+		test_listAll.c \
+		../listAll.c \
 		test_suite.c
 OBJ = $(SRC:.c=.o)
 EXEC = test_suite
