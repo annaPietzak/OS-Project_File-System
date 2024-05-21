@@ -57,6 +57,6 @@ checkLengthValue.o: checkLengthValue.c include/checkLengthValue.h
 
 # Clean up
 clean:
-	rm -f *.o $(MKFILE_MAIN_EXE) $(DELETE_MAIN_EXE) $(LISTALL_EXE)
+	rm -f *.o $(MKFILE_MAIN_EXE) $(DELETE_MAIN_EXE) $(LISTALL_MAIN_EXE)
 
 .PHONY: all clean
