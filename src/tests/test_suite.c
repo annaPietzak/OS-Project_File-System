@@ -1,10 +1,11 @@
 #include <CUnit/CUnit.h>
 #include <CUnit/Basic.h>
 
-// Function declarations to add tests from different modules
 void add_is_valid_string_tests(CU_pSuite suite);
 void add_check_tag_tests(CU_pSuite suite);
-void add_test_mkfile(CU_pSuite suite);
+void add_mkfile_tests(CU_pSuite suite);
+void add_deleteTag_tests(CU_pSuite suite);
+void add_listAll_tests(CU_pSuite suite);
 
 // Setup code
 int global_setup(void) {
@@ -16,6 +17,10 @@ int global_setup(void) {
 int global_teardown(void) {
     // Clean up files
     printf("\nRemoving everything that was created\n");
+    remove("testfile.txt"); // test_mkfile
+    remove("testfile2.txt"); // test_deleteTag
+    remove("testfile_with_attrs.txt"); // test_listAll
+    remove("testfile_no_attrs.txt"); // test_listAll
     return 0;
 }
 
@@ -45,6 +50,33 @@ int main() {
         return CU_get_error();
     }
     add_check_tag_tests(pSuite2);
+
+    printf("Adding suite for test_mkfile\n");
+    // Add suite for test_mkfile_main tests
+    CU_pSuite pSuite3 = CU_add_suite("Suite for test_mkfile", global_setup, global_teardown);
+    if (NULL == pSuite3) {
+        CU_cleanup_registry();
+        return CU_get_error();
+    }
+    add_mkfile_tests(pSuite3);
+
+    printf("Adding suite for test_deleteTag\n");
+    // Add suite for test_deleteTag tests
+    CU_pSuite pSuite4 = CU_add_suite("Suite for test_deleteTag", global_setup, global_teardown);
+    if (NULL == pSuite4) {
+        CU_cleanup_registry();
+        return CU_get_error();
+    }
+    add_deleteTag_tests(pSuite4);
+
+    printf("Adding suite for test_listAll");
+    // Add suite for test_listAll tests
+    CU_pSuite pSuite5 = CU_add_suite("Suite for test_listAll", global_setup, global_teardown);
+    if (NULL == pSuite5) {
+        CU_cleanup_registry();
+        return CU_get_error();
+    }
+    add_listAll_tests(pSuite5);
 
     // Run all tests using the CUnit Basic interface
     printf("Running all tests\n");
