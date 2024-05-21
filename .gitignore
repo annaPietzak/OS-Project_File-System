@@ -16,9 +16,9 @@
 
 # Ignore executables
 test_suite
-deleteTag
-listAll
-mkfile
+deleteTag_main
+listAll_main
+mkfile_main
 
 # AWS User-specific
 .idea/**/aws.xml
