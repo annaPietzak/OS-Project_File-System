@@ -30,6 +30,11 @@ int list_all_tags(const char * filePath) {
         fprintf(stderr, "Something went wrong when accessing the file: %s\n", strerror(errno));
         free(attr_list);
         return 1;
+    } else if (attr_size == 0) {
+        // If there aren't any tags, return this
+        printf("File %s doesn't have any tags attached\n", filePath);
+        free(attr_list);
+        return 0;
     }
 
     // Print all the extended attribute names
