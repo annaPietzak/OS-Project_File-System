@@ -1,6 +1,13 @@
 #include "include/listAll.h"
 
 int list_all_tags(const char * filePath) {
+    // Check if the argument is missing
+    if (filePath == NULL) {
+        fprintf(stderr, "Error: The attribute is missing. "
+                        "Please check your input\n");
+        return 1;
+    }
+
     ssize_t attr_size;
 
     // Get the size of the extended attributes list

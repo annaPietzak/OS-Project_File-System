@@ -1,6 +1,13 @@
 #include "include/mkfile.h"
 
 int create_file_with_attribute(const char *tagName, const char *tagValue, const char *filePath) {
+    // Check if one of the three arguments is missing
+    if (tagName == NULL || tagValue == NULL || filePath == NULL) {
+        fprintf(stderr, "Error: One of the three attributes is missing. "
+                        "Please check that all of them are there\n");
+        return 1;
+    }
+
     // Concatenate user. and tagName to get user.<tag_name>
     char attr_name[MAX_ATTR_NAME_SIZE];
     snprintf(attr_name, sizeof(attr_name), "user.%s", tagName);
