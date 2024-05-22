@@ -2,6 +2,8 @@
 #define MKFILE_H
 
 #include <stdio.h>
+#include <string.h>
+#include <errno.h>
 #include <fcntl.h>
 #include <sys/stat.h>
 #include <sys/xattr.h>
