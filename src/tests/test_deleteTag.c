@@ -1,13 +1,16 @@
 #include <CUnit/CUnit.h>
 #include "../include/deleteTag.h"
-#include "../include/mkfile.h"
 
 void test_delete_tag_success(void) {
     const char *tagName = "validTagName";
+    const char *fullTagName = "user.validTagName";
     const char *tagValue = "validTagValue";
     const char *filePath = "testfile2.txt";
 
-    create_file_with_attribute(tagName, tagValue, filePath);
+    FILE *file = fopen(filePath, "w");
+    CU_ASSERT_PTR_NOT_NULL(file);
+    fclose(file);
+    setxattr(filePath, fullTagName, tagValue, strlen(tagValue), 0);
 
     int result = delete_tag_from_file(tagName, filePath);
 
@@ -24,7 +27,7 @@ void test_delete_tag_missing_tagName(void) {
 }
 
 void test_delete_tag_missing_filePath(void) {
-    const char *tagName = "validTagName";
+    const char *tagName = "user.validTagName";
     const char *filePath = NULL;
 
     int result = delete_tag_from_file(tagName, filePath);
@@ -33,12 +36,12 @@ void test_delete_tag_missing_filePath(void) {
 }
 
 void test_delete_tag_non_existing_attribute(void) {
-    const char *tagName = "nonExistingTagName";
-    const char *tagNameExisting = "validTagName";
-    const char *tagValue = "validTagValue";
+    const char *tagName = "user.nonExistingTagName";
     const char *filePath = "testfile2.txt";
 
-    create_file_with_attribute(tagNameExisting, tagValue, filePath);
+    FILE *file = fopen(filePath, "w");
+    CU_ASSERT_PTR_NOT_NULL(file);
+    fclose(file);
 
     int result = delete_tag_from_file(tagName, filePath);
 
