@@ -1,9 +1,13 @@
 #include <CUnit/CUnit.h>
 #include "../include/deleteTag.h"
+#include "../include/mkfile.h"
 
 void test_delete_tag_success(void) {
     const char *tagName = "validTagName";
+    const char *tagValue = "validTagValue";
     const char *filePath = "testfile2.txt";
+
+    create_file_with_attribute(tagName, tagValue, filePath);
 
     int result = delete_tag_from_file(tagName, filePath);
 
@@ -30,11 +34,15 @@ void test_delete_tag_missing_filePath(void) {
 
 void test_delete_tag_non_existing_attribute(void) {
     const char *tagName = "nonExistingTagName";
+    const char *tagNameExisting = "validTagName";
+    const char *tagValue = "validTagValue";
     const char *filePath = "testfile2.txt";
+
+    create_file_with_attribute(tagNameExisting, tagValue, filePath);
 
     int result = delete_tag_from_file(tagName, filePath);
 
-    CU_ASSERT_EQUAL(result, 0);
+    CU_ASSERT_EQUAL(result, 1);
 }
 
 void add_deleteTag_tests(CU_pSuite suite) {
