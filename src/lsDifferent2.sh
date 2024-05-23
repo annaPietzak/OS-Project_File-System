@@ -14,9 +14,9 @@ case "$1" in
   "help")
     # Help case for showing user, how it works
     echo "Usage: $0 {-a|help|ls|tag_name}"
-    echo " help shows you this (so how it works)."
-    echo " ls and -a function like the normal ls command."
-    echo " tag_name lists all the files that have that tag."
+    echo " help shows you this (how it works)."
+    echo " ls and -a are like the normal ls command. They show you the files of the current directory."
+    echo " tag_name lists all the files that have the specified tag."
     exit 0
     ;;
   "ls")
