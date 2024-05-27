@@ -2,7 +2,7 @@
 
 # Check if at least one argument is given
 if [ $# -eq 0 ]; then
-  echo "Usage: $0 {help|mkfile|lsDifferent2|deleteTag}"
+  echo "Usage: $0 {help|mkfile|lsDifferent2|deleteTag|newTag|showAvailableTags}"
   exit 1
 fi
 
@@ -35,7 +35,7 @@ case "$1" in
    	;;
   *) 
     # Default case: find files and folders with the extended attribute
-    echo "Usage: $0 {help|mkfile|lsDifferent2|deleteTag}"
+    echo "Usage: $0 {help|mkfile|lsDifferent2|deleteTag|newTag|showAvailableTags}"
     exit 0
     ;;
 esac
