@@ -1,5 +1,13 @@
 #include "include/deleteTag.h"
 
+/**
+ * This is the main function for deleteTag.c. It checks first, if tagName is valid and then executes
+ * the function in deleteTag.c
+ * @param argc how many arguemnts there are
+ * @param argv the two arguments we have tagName and filePath
+ * @return 0 or 1 depending on if it worked or not
+ */
+
 int main(int argc, char *argv[]) {
     if (argc < 3) {
         printf("Usage: %s <tag_name> <file_path>\n", argv[0]);

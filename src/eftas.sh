@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# This is our main script which calls all the other main files we have (open_help, mkfile, lsDifferent2,
+# deleteTag, listAll).
+
 # Check if at least one argument is given
 if [ $# -eq 0 ]; then
   echo "Usage: $0 {help|mkfile|lsDifferent2|deleteTag}"
@@ -34,7 +37,7 @@ case "$1" in
    	/home/$USER/OS-Project_File-System/src/listAll_main $2
    	;;
   *) 
-    # Default case: find files and folders with the extended attribute
+    # Default case: show the usage
     echo "Usage: $0 {help|mkfile|lsDifferent2|deleteTag}"
     exit 0
     ;;

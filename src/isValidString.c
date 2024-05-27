@@ -1,6 +1,11 @@
 #include "include/isValidString.h"
 
-// Function to check if a string contains only alphanumeric characters (a-zA-Z0-9_)
+/**
+ * This function checks, if either the tagName or the tagValue contain only alphanumeric characters (a-zA-Z0-9_).
+ * @param str either tagName or tagValue
+ * @return 0 or 1 depending on if the entered value has only alphanumeric characters or not
+ */
+
 int is_valid_string(const char *str) {
     while (*str) {
         if (!isalnum((unsigned char)*str) && *str != '_') {

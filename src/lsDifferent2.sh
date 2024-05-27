@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# This file is responsible for showing you files with different options. ls shows you the files in the
+# current directory, ls -a shows you all files in the current directory, help gives you a quick overview,
+# how this script works and tag_name shows you all files that have that specific tagName.
+
 # Check if at least one argument is given
 if [ $# -eq 0 ]; then
   echo "Usage: $0 {-a|help|ls|tag_name}"

@@ -1,5 +1,13 @@
 #include "include/mkfile.h"
 
+/**
+ * This is the main function for mkfile.c. First it checks, whether the inputs for tagName and tagValue
+ * are correct. If both are good, then it calls the function inside of mkfile.c.
+ * @param argc argument count
+ * @param argv the different arguments (tagName, tagValue, filePath)
+ * @return 0 or 1 depending on if it worked or not
+ */
+
 int main (int argc, char * argv[]) {
     if (argc < 4) {
         printf("Usage: %s <tag_name> <tag_value> <file_path>\n", argv[0]);
@@ -16,6 +24,7 @@ int main (int argc, char * argv[]) {
         return 1;
     }
 
+    // Check if the length of tagValue is longer than allowed
     if (check_tag_value(tagValue) == 1) {
         fprintf(stderr, "Error: The length of the tag_value exceeds the limit of %d characters\n",
                 MAX_ATTR_VALUE_SIZE - 1);
@@ -36,6 +45,7 @@ int main (int argc, char * argv[]) {
         return 1;
     }
 
+    // Creates a file with the specified attributes
     create_file_with_attribute(tagName, tagValue, filePath);
 
     // Print when it was successful

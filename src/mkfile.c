@@ -1,5 +1,15 @@
 #include "include/mkfile.h"
 
+/**
+ * This function creates a file at filePath with the specified tagName and tagValue.
+ * If the file doesn't exist, then it creates a new one. Otherwise it just adds the tag to the
+ * existing file
+ * @param tagName the name the tag should have
+ * @param tagValue the value the tag should have
+ * @param filePath where the file is located
+ * @return 1 or 0 depending on if it worked or not
+ */
+
 int create_file_with_attribute(const char *tagName, const char *tagValue, const char *filePath) {
     // Check if one of the three arguments is missing
     if (tagName == NULL || tagValue == NULL || filePath == NULL) {

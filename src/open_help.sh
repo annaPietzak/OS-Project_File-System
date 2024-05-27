@@ -3,7 +3,7 @@
 filepath="/home/$USER/OS-Project_File-System/src/help.md"
 
 if [ -f "$filepath" ]; then
-  # Open the file using 'less' for a man page-like experience
+  # Opens the file with less so it feels like a man page
   less "$filepath"
 else
   echo "Error: File '$filepath' not found."

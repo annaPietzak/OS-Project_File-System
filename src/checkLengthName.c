@@ -1,6 +1,12 @@
 #include "include/checkLengthName.h"
 
-// Check if combined length of "user." and tagName is longer than allowed
+/**
+ * This function checks the length of user. + tagName since it's allowed to be longer than 255
+ * characters
+ * @param tagName name of the tag that should be checked
+ * @return 0 or 1 depending on if the name is valid or not
+ */
+
 int check_tag_name(const char * tagName) {
     size_t fullTagNameLength = strlen("user.") + strlen(tagName);
 
