@@ -19,3 +19,5 @@ from file 'test.txt': No data available)~~ -> I think it's okay after thinking
 * ~~split the code in deleteTag so that we have a function that we can test and a main method which is being executed~~
 * ~~split the code in listAll so that we have a function that we can test and a main method which is being executed~~
 * ~~when listAll doesn't find any tags, it should say that there aren't any in this file~~
+* ~~write help.md file nicer~~
+* ~~add documentation and comments to different code files~~
