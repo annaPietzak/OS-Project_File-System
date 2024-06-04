@@ -7,7 +7,11 @@ make all
 mkdir /home/$USER/.eftas
 
 #move all c files to the directory /home/$USER/.eftas
-mv ./* -t /home/$USER/.eftas
+mv ./*.o -t /home/$USER/.eftas
+mv ./*_main -t /home/$USER/.eftas
+mv ./*.md -t /home/$USER/.eftas
+mv ./lsDifferent2.sh -t /home/$USER/.eftas
+mv ./open_help.sh -t /home/$USER/.eftas
 
 #move eftas bash script so it can be called like a command
-mv ./eftas.sh /
+#mv ./eftas.sh /
