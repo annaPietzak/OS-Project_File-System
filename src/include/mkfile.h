@@ -11,6 +11,8 @@
 #include "isValidString.h"
 #include "checkLengthName.h"
 #include "checkLengthValue.h"
+#include "checkFilePath.h"
+#include "checkIfTagIsKnown.h"
 
 int create_file_with_attribute(const char *tagName, const char *tagValue, const char *filePath);
 

@@ -12,7 +12,7 @@ int main (int argc, char * argv[]) {
     // Check if combined length of "user." and tagName is longer than allowed
     if (check_tag_name(tagName) == 1) {
         fprintf(stderr, "Error: The total length of the tag_name exceeds the limit of %d characters\n",
-                (MAX_ATTR_NAME_SIZE - 1 - strlen("user.")));
+                (int) (MAX_ATTR_NAME_SIZE - 1 - strlen("user.")));
         return 1;
     }
 
