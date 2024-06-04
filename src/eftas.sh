@@ -33,6 +33,14 @@ case "$1" in
    	# List all tags from specific file case
    	/home/$USER/OS-Project_File-System/src/listAll_main $2
    	;;
+  "newTag")
+   	# add a name and vlaue to the known tags
+   	/home/$USER/OS-Project_File-System/src/addNewTag_main $2
+   	;;
+  "showAvailableTags")
+   	# prints a list of all available tags
+   	/home/$USER/OS-Project_File-System/src/showAvailableTags
+   	;;
   *) 
     # Default case: find files and folders with the extended attribute
     echo "Usage: $0 {help|mkfile|lsDifferent2|deleteTag|newTag|showAvailableTags}"

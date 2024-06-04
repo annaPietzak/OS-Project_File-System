@@ -23,10 +23,5 @@ int show_available_tags() {
     fclose(fp);
     if (line)
         free(line);
-    
-    if (found) {
-        return 0;
-    } else {
-        return 1;
-    }
+    return 0;
 }
