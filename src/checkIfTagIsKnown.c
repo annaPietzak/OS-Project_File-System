@@ -11,7 +11,9 @@ int check_if_tag_is_known(const char * tagName, const char * tagValue) {
     strcat(inputTag, tagValue);
     bool found = false;
 
-    fp = fopen("/home/$USER/.eftas/ressources/tags.csv", "r");
+    char pathToTags[] = "/home/";
+    strcat(strcat(pathToTags, getenv("USERNAME"), "/.eftas/ressources/tags.csv")
+    fp = fopen(pathToTags, "r");
     if (fp == NULL)
         return 1;
 
