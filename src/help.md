@@ -31,7 +31,7 @@ The different operations you can execute are:
 - deleteTag <tag_name> <file_path> -> deletes the specified tag from the specified file
 - listAll <file_path> -> lists all tags that the specified file has
 - newTag <tag_name> <tag_value> -> add a new tag to the known tags, so you can add it to a file.
-- showAvailableTags -> shows the tags known to the filesystem, all these tags can be added to the filesystem.
+- showAllTags -> shows the tags known to the filesystem, all these tags can be added to files.
 
 
 BUGS
