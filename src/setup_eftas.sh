@@ -16,4 +16,5 @@ mv ./open_help.sh -t /home/$USER/.eftas
 mv ../ressources/ -t /home/$USER/.eftas
 
 #move eftas bash script so it can be called like a command
-#mv ./eftas.sh /
+sudo cp eftas.sh /usr/local/bin/eftas
+

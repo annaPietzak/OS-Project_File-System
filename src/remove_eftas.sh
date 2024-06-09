@@ -9,5 +9,5 @@ mv /home/$USER/.eftas/ressources/ -t ..
 #remove hidden eftas folder
 rm -dr /home/$USER/.eftas
 
-#move eftas bash script back
-#mv ./eftas.sh /
+#remove eftas bash script again
+sudo rm /usr/local/bin/eftas
