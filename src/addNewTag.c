@@ -4,7 +4,10 @@ int add_new_tag(const char * tagName, const char * tagValue) {
     printf("add tag to system.\n");
     FILE * fp;
 
-    fp = fopen("/home/$USER/.eftas/ressources/tags.csv", "a");
+    char pathToTags[100] = "/home/";
+    strcat(pathToTags, getenv("USERNAME"));
+    strcat(pathToTags, "/.eftas/ressources/tags.csv");
+    fp = fopen(pathToTags, "a");
     if (fp == NULL)
         return 1;
 
