@@ -15,7 +15,7 @@ int show_available_tags() {
         printf("error - tags not found\n");
         return 1;
     }
-    
+
     printf("Available tags: \n");
     while (feof(fp) != true){
         fgets(line, 1000, fp);
