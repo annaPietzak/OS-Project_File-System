@@ -1,5 +1,12 @@
 #include "include/deleteTag.h"
 
+/**
+ * This function deletes the specified tag from the specified file
+ * @param tagName tag which the user wants to be deleted
+ * @param filePath file where the tag is located
+ * @return 0 or 1 depending on if it worked or not
+ */
+
 int delete_tag_from_file(const char * tagName, const char * filePath) {
     // Check if one of the two arguments is missing
     if (tagName == NULL || filePath == NULL) {

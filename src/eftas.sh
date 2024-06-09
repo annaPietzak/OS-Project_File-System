@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# This is our main script which calls all the other main files we have (open_help, mkfile, lsDifferent2,
+# deleteTag, listAll).
+
 filePath=/home/$USER/.eftas
 filePath2=/home/$USER/OS-Project_File-System/src/
 
@@ -44,8 +47,8 @@ case "$1" in
    	# prints a list of all available tags
    	"$filePath/showAvailableTags"
    	;;
-  *) 
-    # Default case: find files and folders with the extended attribute
+  *)
+    # Default case: show the usage
     echo "Usage: $0 {help|mkfile|lsDifferent2|deleteTag|newTag|showAvailableTags}"
     exit 0
     ;;

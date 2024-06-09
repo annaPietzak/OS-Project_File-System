@@ -1,5 +1,11 @@
 #include "include/listAll.h"
 
+/**
+ * This function shows you the different tags that the file at filePath has.
+ * @param filePath the file you want to have all tags listed
+ * @return 0 or 1 depending if it worked or not
+ */
+
 int list_all_tags(const char * filePath) {
     // Check if the argument is missing
     if (filePath == NULL) {

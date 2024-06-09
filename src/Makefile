@@ -1,3 +1,5 @@
+# This is the Makefile to compile and link all the single files together so we have working executables
+
 # Compiler and flags
 CC = gcc
 CFLAGS = -Wall -Wextra -std=c99
