@@ -8,7 +8,7 @@ filePath2=/home/$USER/OS-Project_File-System/src/
 
 # Check if at least one argument is given
 if [ $# -eq 0 ]; then
-  echo "Usage: $0 {help|mkfile|lsDifferent2|deleteTag|newTag|showAvailableTags}"
+  echo "Usage: $0 {help|mkfile|lsDifferent2|deleteTag|newTag|showAllTags}"
   exit 1
 fi
 
@@ -43,13 +43,13 @@ case "$1" in
    	# add a name and vlaue to the known tags
    	"$filePath/newTag_main" $2 $3
    	;;
-  "showAvailableTags")
+  "showAllTags")
    	# prints a list of all available tags
    	"$filePath/showAvailableTags"
    	;;
   *)
     # Default case: show the usage
-    echo "Usage: $0 {help|mkfile|lsDifferent2|deleteTag|newTag|showAvailableTags}"
+    echo "Usage: $0 {help|mkfile|lsDifferent2|deleteTag|newTag|showAllTags}"
     exit 0
     ;;
 esac

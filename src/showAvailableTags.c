@@ -2,7 +2,7 @@
 
 
 // Check if path points to file and not directory
-int show_available_tags() {
+int main() {
     FILE * fp;
     char line[1000];
 
