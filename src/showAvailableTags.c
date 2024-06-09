@@ -4,19 +4,24 @@
 // Check if path points to file and not directory
 int show_available_tags() {
     FILE * fp;
-    char * line = NULL;
+    char line[1000];
 
-    fp = fopen("ressources/tags.csv", "r");
-    if (fp == NULL)
+    char pathToTags[100] = "/home/";
+    strcat(pathToTags, getenv("USERNAME"));
+    strcat(pathToTags, "/.eftas/ressources/tags.csv");
+    fp = fopen(pathToTags, "r");
+
+    if (fp == NULL){
+        printf("error - tags not found\n");
         return 1;
-
+    }
+    
+    printf("Available tags: \n");
     while (feof(fp) != true){
         fgets(line, 1000, fp);
-        printf("Tag: %s", line);
+        printf("%s", line);
     }
 
     fclose(fp);
-//    if (line)
-//        free(line);
     return 0;
 }
