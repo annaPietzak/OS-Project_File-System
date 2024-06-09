@@ -21,3 +21,6 @@ from file 'test.txt': No data available)~~ -> I think it's okay after thinking
 * ~~when listAll doesn't find any tags, it should say that there aren't any in this file~~
 * ~~write help.md file nicer~~
 * ~~add documentation and comments to different code files~~
+* lsDifferent2 does not show files with tags
+* maybe rename lsDifferent2 to something more intuitive
+* showAllTags show the last tag twice for some reason
