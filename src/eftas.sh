@@ -41,7 +41,7 @@ case "$1" in
    	;;
   "newTag")
    	# add a name and vlaue to the known tags
-   	"$filePath/addNewTag_main" $2
+   	"$filePath/newTag_main" $2 $3
    	;;
   "showAvailableTags")
    	# prints a list of all available tags
