@@ -4,10 +4,10 @@
 sudo apt install attr
 
 #give execution rights to all bashscripts
-chmod +x open_help.sh
-chmod +x remove_eftas.sh
-chmod +x eftas.sh
-chmod +x lsDifferent2.sh
+chmod +x ./src/open_help.sh
+chmod +x ./src/remove_eftas.sh
+chmod +x ./src/eftas.sh
+chmod +x ./src/lsDifferent2.sh
 
 #compile all files with makefile
 cd ./src
