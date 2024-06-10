@@ -9,13 +9,13 @@
  */
 
 int main (int argc, char * argv[]) {
-    if (argc < 4) {
-        printf("Usage: %s <tag_name> <tag_value> <file_path>\n", argv[0]);
+    if (argc < 3) {
+        printf("Usage: %s <tag_name> <file_path>\n", argv[0]);
         return 1;
     }
     char *tagName = argv[1];
-    char *tagValue = argv[2];
-    char *filePath = argv[3];
+    char *tagValue = argv[1];
+    char *filePath = argv[2];
 
     // Check if combined length of "user." and tagName is longer than allowed
     if (check_tag_name(tagName) == 1) {
