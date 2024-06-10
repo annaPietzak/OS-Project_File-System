@@ -8,7 +8,7 @@ filePath2=/home/$USER/OS-Project_File-System/src/
 
 # Check if at least one argument is given
 if [ $# -eq 0 ]; then
-  echo "Usage: $0 {help|mkfile|lsDifferent2|deleteTag|newTag|showAllTags}"
+  echo "Usage: $0 {help|mkfile|tagFile|ls|deleteTag|newTag|showAllTags}"
   exit 1
 fi
 
@@ -19,13 +19,13 @@ case "$1" in
     ;;
   "mkfile")
   	# Make a file case
-    "$filePath/mkfile_main" $2 $3 $4
+    "$filePath/mkfile_main" $2 $3
     ;;
   "tagFile")
     	# Make a file case
-      "$filePath/mkfile_main" $2 $3 $4
+      "$filePath/mkfile_main" $2 $3
     ;;
-  "lsDifferent2")
+  "ls")
     # Our version of ls case
 	  if [ -z "$2" ]; then
 	    # When there are no additional arguments, reset positional parameters
@@ -53,7 +53,7 @@ case "$1" in
    	;;
   *)
     # Default case: show the usage
-    echo "Usage: $0 {help|mkfile|lsDifferent2|deleteTag|newTag|showAllTags}"
+    echo "Usage: $0 {help|mkfile|tagFile|ls|deleteTag|newTag|showAllTags}"
     exit 0
     ;;
 esac
