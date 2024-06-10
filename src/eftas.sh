@@ -21,6 +21,10 @@ case "$1" in
   	# Make a file case
     "$filePath/mkfile_main" $2 $3 $4
     ;;
+  "tagFile")
+    	# Make a file case
+      "$filePath/mkfile_main" $2 $3 $4
+    ;;
   "lsDifferent2")
     # Our version of ls case
 	  if [ -z "$2" ]; then
