@@ -1,6 +1,6 @@
 #!/bin/bash
 
-filepath="/home/$USER/OS-Project_File-System/src/help.md"
+filepath="/home/$USER/.eftas/help.md"
 
 if [ -f "$filepath" ]; then
   # Opens the file with less so it feels like a man page

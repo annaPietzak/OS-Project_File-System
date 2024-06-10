@@ -20,7 +20,7 @@ int main (int argc, char * argv[]) {
     // Check if combined length of "user." and tagName is longer than allowed
     if (check_tag_name(tagName) == 1) {
         fprintf(stderr, "Error: The total length of the tag_name exceeds the limit of %d characters\n",
-                MAX_ATTR_NAME_SIZE - 1);
+                (int) (MAX_ATTR_NAME_SIZE - 1 - strlen("user.")));
         return 1;
     }
 
@@ -28,6 +28,11 @@ int main (int argc, char * argv[]) {
     if (check_tag_value(tagValue) == 1) {
         fprintf(stderr, "Error: The length of the tag_value exceeds the limit of %d characters\n",
                 MAX_ATTR_VALUE_SIZE - 1);
+        return 1;
+    }
+
+    if (check_if_tag_is_known(tagName, tagValue) == 1) {
+        fprintf(stderr, "This tag is not yet used in the filesystem. Tags can be added to the filesystem with eftas addTag <tagName> <tagValue>\n");
         return 1;
     }
 
@@ -44,10 +49,17 @@ int main (int argc, char * argv[]) {
                         "Only alphanumeric and underscores are allowed.\n", tagValue);
         return 1;
     }
+    
+    //check if filepath is directory
+    if (check_file_path(filePath) == 1) {
+        fprintf(stderr, "Error: File path '%s' points to a directory. "
+                        "mkfile is only used for files.\n", filePath);
+        return 1;
+    }
 
     // Creates a file with the specified attributes
     create_file_with_attribute(tagName, tagValue, filePath);
-
+    
     // Print when it was successful
     printf("Tag %s set successfully for file %s with name %s\n", tagValue, filePath, tagName);
     return 0;
