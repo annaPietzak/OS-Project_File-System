@@ -23,5 +23,5 @@ from file 'test.txt': No data available)~~ -> I think it's okay after thinking
 * ~~add documentation and comments to different code files~~
 * ~~lsDifferent2 does not show files with tags~~
 * ~~maybe rename lsDifferent2 to something more intuitive~~
-* add tagFile as an alias to mkfile, it can call the same main method, but would be more intuitive for the user to provide both method names
-* showAllTags show the last tag twice for some reason
+* ~~add tagFile as an alias to mkfile, it can call the same main method, but would be more intuitive for the user to provide both method names~~
+* ~~showAllTags show the last tag twice for some reason~~
