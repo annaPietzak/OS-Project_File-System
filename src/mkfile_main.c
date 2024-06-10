@@ -31,11 +31,6 @@ int main (int argc, char * argv[]) {
         return 1;
     }
 
-    if (check_if_tag_is_known(tagName, tagValue) == 1) {
-        fprintf(stderr, "This tag is not yet used in the filesystem. Tags can be added to the filesystem with eftas addTag <tagName> <tagValue>\n");
-        return 1;
-    }
-
     // Check if the tagName contains any non-alphanumeric characters
     if (is_valid_string(tagName) == 1) {
         fprintf(stderr, "Error: Tag name '%s' contains invalid characters. "
@@ -49,7 +44,12 @@ int main (int argc, char * argv[]) {
                         "Only alphanumeric and underscores are allowed.\n", tagValue);
         return 1;
     }
-    
+
+    if (check_if_tag_is_known(tagName, tagValue) == 1) {
+        fprintf(stderr, "This tag is not yet used in the filesystem. Tags can be added to the filesystem with eftas addTag <tagName> <tagValue>\n");
+        return 1;
+    }
+
     //check if filepath is directory
     if (check_file_path(filePath) == 1) {
         fprintf(stderr, "Error: File path '%s' points to a directory. "

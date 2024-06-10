@@ -5,7 +5,7 @@ sudo apt install attr
 
 #give execution rights to all bashscripts
 chmod +x ./src/open_help.sh
-chmod +x ./src/remove_eftas.sh
+chmod +x ./remove_eftas.sh
 chmod +x ./src/eftas.sh
 chmod +x ./src/lsDifferent2.sh
 
@@ -28,3 +28,5 @@ mv ./ressources/ -t /home/$USER/.eftas
 
 #move eftas bash script so it can be called like a command
 sudo cp ./src/eftas.sh /usr/local/bin/eftas
+
+echo "Successfully compiled all files, eftas is ready for use. Call with 'eftas'."
