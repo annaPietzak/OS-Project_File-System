@@ -11,7 +11,7 @@ from file 'test.txt': No data available)~~ -> I think it's okay after thinking
 * ~~when executing listAll, only shows name but would be nice to see value as well~~
 * ~~listAll: when path doesn't exist, this happens (Error when getting size of extended attributes list (listxattr 1))~~
 * ~~in eftas.sh all the links are hardcoded. so if it's a different user, then it won't work~~ 
-**(not quite yet, still have to change paths for the final version)**
+**~~(not quite yet, still have to change paths for the final version)~~**
 * ~~in open_help.sh the link to the help.md is hard coded~~
 * ~~deleteTag should check length and validity of tagname before doing anything with it~~
 * ~~mkfile has to check length of tagValue~~
@@ -21,7 +21,7 @@ from file 'test.txt': No data available)~~ -> I think it's okay after thinking
 * ~~when listAll doesn't find any tags, it should say that there aren't any in this file~~
 * ~~write help.md file nicer~~
 * ~~add documentation and comments to different code files~~
-* lsDifferent2 does not show files with tags
-* maybe rename lsDifferent2 to something more intuitive
+* ~~lsDifferent2 does not show files with tags~~
+* ~~maybe rename lsDifferent2 to something more intuitive~~
 * add tagFile as an alias to mkfile, it can call the same main method, but would be more intuitive for the user to provide both method names
 * showAllTags show the last tag twice for some reason
