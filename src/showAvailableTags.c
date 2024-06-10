@@ -4,7 +4,7 @@
 // Check if path points to file and not directory
 int main() {
     FILE * fp;
-    char line[1000];
+    char line[3500];
 
     char pathToTags[100] = "/home/";
     strcat(pathToTags, getenv("USERNAME"));
@@ -17,8 +17,7 @@ int main() {
     }
 
     printf("Available tags: \n");
-    while (feof(fp) != true){
-        fgets(line, 1000, fp);
+    while (fgets (line, 3500, fp)!= NULL){
         printf("%s", line);
     }
 
