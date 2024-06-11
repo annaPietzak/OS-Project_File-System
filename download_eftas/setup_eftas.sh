@@ -27,7 +27,7 @@ cp ./src/showAvailableTags -t /home/$USER/.eftas
 cp ./src/*.md -t /home/$USER/.eftas
 cp ./src/lsDifferent2.sh -t /home/$USER/.eftas
 cp ./src/open_help.sh -t /home/$USER/.eftas
-cp ./src/ressources/ -t /home/$USER/.eftas
+cp -r ./src/ressources  /home/$USER/.eftas/
 
 # Move eftas bash script so it can be called like a regular command
 sudo cp ./src/eftas.sh /usr/local/bin/eftas

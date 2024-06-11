@@ -9,6 +9,8 @@ rm -dr /home/$USER/.eftas
 sudo rm /usr/local/bin/eftas
 
 # Remove the created files when running the makefile
+cd ./src/
 make clean
+cd ..
 
 echo "Removed all compiled files, restored download folder to origin."
