@@ -7,6 +7,6 @@
 #include <stdbool.h>
 #include <stdlib.h>
 
-int check_if_tag_is_known(const char * tagName, const char * tagValue);
+int check_if_tag_is_known(const char * tagName);
 
 #endif //CHECKIFTAGISKNOWN_H

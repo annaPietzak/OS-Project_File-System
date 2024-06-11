@@ -24,7 +24,7 @@ case "$1" in
     exit 0
     ;;
   "ls")
-	ls
+	  ls
    	;;
   *) 
     # Default case: find files and folders with the extended attribute

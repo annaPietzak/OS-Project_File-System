@@ -8,20 +8,24 @@ filePath2=/home/$USER/OS-Project_File-System/src/
 
 # Check if at least one argument is given
 if [ $# -eq 0 ]; then
-  echo "Usage: $0 {help|mkfile|lsDifferent2|deleteTag|newTag|showAllTags}"
+  echo "Usage: $0 {help|mkfile|tagFile|ls|deleteTag|newTag|showAllTags}"
   exit 1
 fi
 
 case "$1" in
   "help")
-	# Help case
+	  # Help case
   	sh "$filePath/open_help.sh"
     ;;
   "mkfile")
   	# Make a file case
-    "$filePath/mkfile_main" $2 $3 $4
+    "$filePath/mkfile_main" $2 $3
     ;;
-  "lsDifferent2")
+  "tagFile")
+    # Make a file case
+    "$filePath/mkfile_main" $2 $3
+    ;;
+  "ls")
     # Our version of ls case
 	  if [ -z "$2" ]; then
 	    # When there are no additional arguments, reset positional parameters
@@ -40,16 +44,16 @@ case "$1" in
    	"$filePath/listAll_main" $2
    	;;
   "newTag")
-   	# add a name and vlaue to the known tags
-   	"$filePath/newTag_main" $2 $3
+   	# Add a name to the known tags case
+   	"$filePath/newTag_main" $2
    	;;
   "showAllTags")
-   	# prints a list of all available tags
+   	# Prints a list of all available tags case
    	"$filePath/showAvailableTags"
    	;;
   *)
     # Default case: show the usage
-    echo "Usage: $0 {help|mkfile|lsDifferent2|deleteTag|newTag|showAllTags}"
+    echo "Usage: $0 {help|mkfile|tagFile|ls|deleteTag|newTag|showAllTags}"
     exit 0
     ;;
 esac
