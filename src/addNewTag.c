@@ -1,7 +1,7 @@
 #include "include/addNewTag.h"
 
-int add_new_tag(const char * tagName, const char * tagValue) {
-    printf("add tag to system.\n");
+int add_new_tag(const char * tagName) {
+    printf("Add tag %s to the system\n", tagName);
     FILE * fp;
 
     char pathToTags[100] = "/home/";
@@ -11,9 +11,9 @@ int add_new_tag(const char * tagName, const char * tagValue) {
     if (fp == NULL)
         return 1;
 
-    fprintf(fp, "%s; %s\n", tagName, tagValue);
+    fprintf(fp, "%s\n", tagName);
 
     fclose(fp);
-    printf("tag added to system.\n");
+    printf("Tag %s is added to system.\n", tagName);
     return(0);
 }

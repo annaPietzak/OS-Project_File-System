@@ -10,6 +10,6 @@
 #include "checkLengthValue.h"
 #include "checkIfTagIsKnown.h"
 
-int add_new_tag(const char * tagName, const char * tagValue);
+int add_new_tag(const char * tagName);
 
 #endif //ADDNEWTAG_H
