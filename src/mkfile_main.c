@@ -45,8 +45,9 @@ int main (int argc, char * argv[]) {
         return 1;
     }
 
-    if (check_if_tag_is_known(tagName, tagValue) == 1) {
-        fprintf(stderr, "This tag is not yet used in the filesystem. Tags can be added to the filesystem with eftas addTag <tagName> <tagValue>\n");
+    if (check_if_tag_is_known(tagName) == 1) {
+        fprintf(stderr, "This tag is not yet used in the filesystem. "
+                        "Tags can be added to the filesystem with eftas newTag <tagName>\n");
         return 1;
     }
 
