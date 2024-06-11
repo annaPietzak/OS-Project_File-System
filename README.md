@@ -1,9 +1,9 @@
 
-███████╗███████╗████████╗ █████╗ ███████╗
-██╔════╝██╔════╝╚══██╔══╝██╔══██╗██╔════╝
-█████╗  █████╗     ██║   ███████║███████╗
-██╔══╝  ██╔══╝     ██║   ██╔══██║╚════██║
-███████╗██║        ██║   ██║  ██║███████║
+███████╗███████╗████████╗ █████╗ ███████╗ 
+██╔════╝██╔════╝╚══██╔══╝██╔══██╗██╔════╝ 
+█████╗  █████╗     ██║   ███████║███████╗ 
+██╔══╝  ██╔══╝     ██║   ██╔══██║╚════██║ 
+███████╗██║        ██║   ██║  ██║███████║ 
 ╚══════╝╚═╝        ╚═╝   ╚═╝  ╚═╝╚══════╝
 
 
@@ -33,4 +33,21 @@ Removal:
 ===============
 
 If you wish to remove EFTAS, run the `remove_eftas.sh` script with the command `./remove_eftas.sh`.
-This will remove all compiled files and restore the EFTAS artifacts to how they were before the setup. 
+This will remove all compiled files and restore the EFTAS artifacts to how they were before the setup.
+
+Testing:
+===============
+
+If you wish to try our tests, you need to install first the library for CUnit:
+```[bash!]
+sudo apt install libcunit1 libcunit1-dev
+```
+Once this is done, head to /src/tests/ and run the Makefile with `make all` to compile and link the files together.
+Now you can execute them by running `./test_suite`.
+
+
+Known Issues:
+===============
+
+- When trying to use the command `eftas`, it's possible that it returns "Permission denied". If that's the case,
+just run `sudo chmod 755 /usr/local/bin/eftas` to give yourself the correct permissions
