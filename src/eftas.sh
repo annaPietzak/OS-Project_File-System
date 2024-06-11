@@ -14,7 +14,7 @@ fi
 
 case "$1" in
   "help")
-	# Help case
+	  # Help case
   	sh "$filePath/open_help.sh"
     ;;
   "mkfile")
@@ -22,8 +22,8 @@ case "$1" in
     "$filePath/mkfile_main" $2 $3
     ;;
   "tagFile")
-    	# Make a file case
-      "$filePath/mkfile_main" $2 $3
+    # Make a file case
+    "$filePath/mkfile_main" $2 $3
     ;;
   "ls")
     # Our version of ls case
@@ -44,11 +44,11 @@ case "$1" in
    	"$filePath/listAll_main" $2
    	;;
   "newTag")
-   	# add a name and vlaue to the known tags
-   	"$filePath/newTag_main" $2 $3
+   	# Add a name to the known tags case
+   	"$filePath/newTag_main" $2
    	;;
   "showAllTags")
-   	# prints a list of all available tags
+   	# Prints a list of all available tags case
    	"$filePath/showAvailableTags"
    	;;
   *)

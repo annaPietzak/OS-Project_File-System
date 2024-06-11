@@ -1,5 +1,11 @@
 #include "include/addNewTag.h"
 
+/**
+ * This method adds a tag to our tags.csv file, which contains all the known tags
+ * @param tagName name of the tag that should be written to the file
+ * @return 0 or 1 depending on if it worked or not
+ */
+
 int add_new_tag(const char * tagName) {
     printf("Add tag %s to the system\n", tagName);
     FILE * fp;

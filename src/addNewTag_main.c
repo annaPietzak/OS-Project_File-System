@@ -1,5 +1,13 @@
 #include "include/addNewTag.h"
 
+/**
+ * This is the main method for addNewTag.c. It first checks the tagName for length, validity and
+ * if the tag is already in the tags.cvs file. If all are good, then it executes addnewTag.c
+ * @param argc Used for checking the amount of arguments
+ * @param argv tagName is one argument
+ * @return 0 or 1 depending on if it worked or not
+ */
+
 int main(int argc, char *argv[]) {
     if (argc < 2) {
         printf("Usage: %s <tag_name>\n", argv[0]);

@@ -1,12 +1,14 @@
 #!/bin/bash
 
-#remove hidden eftas folder
+# This bash script deletes all the EFTAS files that were created when running setp_eftas.sh
+
+# Remove hidden eftas folder
 rm -dr /home/$USER/.eftas
 
-#remove eftas bash script again
+# Remove eftas bash script again
 sudo rm /usr/local/bin/eftas
 
-#remove the created files again
+# Remove the created files when running the makefile
 make clean
 
 echo "Removed all compiled files, restored download folder to origin."
