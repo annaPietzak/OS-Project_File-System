@@ -8,7 +8,7 @@ filePath2=/home/$USER/OS-Project_File-System/src/
 
 # Check if at least one argument is given
 if [ $# -eq 0 ]; then
-  echo "Usage: $0 {help|mkfile|tagFile|ls|deleteTag|newTag|showAllTags}"
+  echo "Usage: $0 {help|mkfile|tagFile|ls|deleteTag|listAll|newTag|showAllTags}"
   exit 1
 fi
 
@@ -53,7 +53,7 @@ case "$1" in
    	;;
   *)
     # Default case: show the usage
-    echo "Usage: $0 {help|mkfile|tagFile|ls|deleteTag|newTag|showAllTags}"
+    echo "Usage: $0 {help|mkfile|tagFile|ls|deleteTag|listAll|newTag|showAllTags}"
     exit 0
     ;;
 esac
