@@ -24,6 +24,7 @@ Using our extension is very simple. Just type eftas <operation>.
 The different operations you can execute are:
 - help -> to see this manual page.
 - mkfile <tag_name> <tag_value> <file_path> -> creates a file with the specified tagname and -value. If the file already exists, then it will just add the tag to that file. You can only add tags that are known to the filesystem.
+- tagFile <tag_name> <tag_value> <file_path> adds the specified tag to the file specified in <path>. You can only add tags that are known to the filesystem.
 - lsDifferent2 <no argument,-a,tag_name> -> shows you files in different ways
 	- no argument will utilize the ls command and will show you files in your current directory
 	- -a will show you all the files, including the ones that are hidden

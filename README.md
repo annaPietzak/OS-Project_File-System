@@ -19,7 +19,7 @@ Following steps are needed to install our extension:
 - Download the folder `download_eftas` which contains all the necessary files.
 - Move to the downloaded folder.
 - Give `setup_eftas.sh` execution rights with the command `chmod +x setup_eftas.sh`.
-- Execute `setup_eftas.sh` with `./setup_eftas.sh`. This sets up the extension, so you can just call `eftas`.
+- Execute `setup_eftas.sh` with `./setup_eftas.sh`. This sets up the extension, so you can call it with `eftas`.
 
 
 Usage:
